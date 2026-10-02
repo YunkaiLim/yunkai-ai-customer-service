@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "customer-service",
+  "name": "Yunkai Customer Service",
+  "version": "1.0.0",
+  "entrypoint": "run.ps1",
+  "health_url": "http://127.0.0.1:8000/health",
+  "manifest_url": "http://127.0.0.1:8000/yunkai/manifest",
+  "bind_policy": "loopback_only",
+  "data_boundary": {
+    "knowledge": "service_local_only",
+    "personal_memory": "denied",
+    "device_actions": "denied",
+    "credentials": "environment_or_external_secret_store_only"
+  },
+  "human_gate": [
+    "refunds",
+    "payments",
+    "fraud",
+    "account_security",
+    "legal_disputes",
+    "irreversible_actions"
+  ]
+}
